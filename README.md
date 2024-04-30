@@ -1,5 +1,5 @@
 # Thermodynamics 
-[![View Thermodynamics on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/126784-thermodynamics) or [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj)
+[![View Thermodynamics on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/126784-thermodynamics) or [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=README.mlx)
 
 [![GitHub top language](https://img.shields.io/github/languages/top/MathWorks-Teaching-Resources/Thermodynamics)](https://matlab.mathworks.com/)  [![Thermodynamics Module CI/CD](https://github.com/MathWorks-Teaching-Resources/Thermodynamics/actions/workflows/ci.yml/badge.svg)](https://github.com/MathWorks-Teaching-Resources/Thermodynamics/actions/workflows/ci.yml)
 
