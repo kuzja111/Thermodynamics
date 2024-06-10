@@ -101,7 +101,7 @@ This script introduces state diagrams and temperature-entropy plots.
 
 ## ##
 
-**Model_Fridge.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Models23a/Model_Fridge.mlx)
+**Model_Fridge.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Models/Models23a/Model_Fridge.mlx)
 
 Apply their knowledge of thermodynamics to a Simulink model of a real refrigerator.  
 
@@ -124,7 +124,7 @@ Apply their knowledge of thermodynamics to a Simulink model of a real refrigerat
 
 ## ##
 
-**BuildRefrigerator.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Models23a/BuildRefrigerator.mlx)
+**BuildRefrigerator.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Models/Models23a/BuildRefrigerator.mlx)
 
 Using Simulink and the capabilities of the Simscape Two-Phase Fluid libraries, build and test a complete refrigerator from a blank model. 
 
