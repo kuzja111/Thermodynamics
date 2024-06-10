@@ -36,7 +36,7 @@ For those interested in additional coding, SetUpCoolProp includes instructions f
 
 ## Details ##
 
-**FirstLaw.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=FirstLaw.mlx)
+**FirstLaw.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Scripts/FirstLaw.mlx)
 
 This script introduces the first law of thermodynamics with a focus on units, energy, systems, and conservation laws. 
 
@@ -48,7 +48,7 @@ This script introduces the first law of thermodynamics with a focus on units, en
 
 ## ##
 
-**CreatePVplots.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=CreatePVplots.mlx)
+**CreatePVplots.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Scripts/CreatePVplots.mlx)
 
 This script investigates pressure-volume (PV) diagrams and their relationship to state equations in a closed system.
 
@@ -60,7 +60,7 @@ This script investigates pressure-volume (PV) diagrams and their relationship to
 
 ## ##
 
-**CalculateWork.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=CalculateWork.mlx)
+**CalculateWork.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Scripts/CalculateWork.mlx)
 
 This script introduces computing the work done by a system using analysis of its PV plot. 
 
@@ -74,7 +74,7 @@ This script introduces computing the work done by a system using analysis of its
 
 ## ##
 
-**SecondLaw.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=SecondLaw.mlx)
+**SecondLaw.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Scripts/SecondLaw.mlx)
 
 This script introduces the second law of thermodynamics in both the Kelvin-Planck and Clausius formulations.
 
@@ -88,7 +88,7 @@ This script introduces the second law of thermodynamics in both the Kelvin-Planc
 
 ## ##
 
-**StatePlots.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=StatePlots.mlx)
+**StatePlots.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Scripts/StatePlots.mlx)
 
 This script introduces state diagrams and temperature-entropy plots.  
 
@@ -101,7 +101,7 @@ This script introduces state diagrams and temperature-entropy plots.
 
 ## ##
 
-**Model_Fridge.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Model_Fridge.mlx)
+**Model_Fridge.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Models23a/Model_Fridge.mlx)
 
 Apply their knowledge of thermodynamics to a Simulink model of a real refrigerator.  
 
@@ -124,7 +124,7 @@ Apply their knowledge of thermodynamics to a Simulink model of a real refrigerat
 
 ## ##
 
-**BuildRefrigerator.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=BuildRefrigerator.mlx)
+**BuildRefrigerator.mlx** [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Thermodynamics&project=Thermodynamics.prj&file=Models23a/BuildRefrigerator.mlx)
 
 Using Simulink and the capabilities of the Simscape Two-Phase Fluid libraries, build and test a complete refrigerator from a blank model. 
 
