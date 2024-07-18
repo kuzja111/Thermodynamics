@@ -1,4 +1,4 @@
-classdef StartUpFcn < matlab.apps.AppBase
+classdef ProjectStartupApp < matlab.apps.AppBase
 
     % Properties that correspond to app components
     properties (Access = public)
@@ -19,6 +19,11 @@ classdef StartUpFcn < matlab.apps.AppBase
         ReviewText      matlab.ui.control.Label
     end
 
+    
+    properties (Access = private)
+        GitHubOrganization = "MathWorks-Teaching-Resources"; % Description
+        GitHubRepository = "Thermodynamics";
+    end
 %% How to customize the app?    
 %{
     
@@ -27,38 +32,35 @@ classdef StartUpFcn < matlab.apps.AppBase
     
     1. Change "Module Template" in app.WelcomeTitle by your module name
     2. Change "Module Template" in app.ReviewTitle by your module name
-    3. Change image in app.Image by the cover image you would like for your
+    3. Change the GitHubRepository (line 25) to the correct value
+    4. Change image in app.Image by the cover image you would like for your
        module. This image should be located in rootFolder/Images
-    4. Create your MS Form:
-        a. Make a copy of the Faculty and the Student survey
+    5. Create your MS Form:
+        a. Make a copy of the Faculty and the Student Template surveys
         b. Customize the name of the survey to match the name of your
            survey
         c. Click on "Collect responses", select "Anyone can respond" and
-        copy the form link to the app private property below.
+        copy the form link to SetupAppLinks (see step 6).
     5. Create your MS Sway:
         a. Go to MS Sway
         b. Create a blank sway
         c. Add the name of your module to the title box
         d. Click "Share", Select "Anyone with a link", Select "View"
-        e. Copy the sway link into the app private properties below.
+        e. Copy the sway link to SetupAppLinks (see step 6).
+    6. Add the Survey and Sway link to Utilities/SurveyLinks using
+    SetupAppLinks.mlx in InternalFiles/RequiredFunctions/StartUpFcn
+    7. Save > Export to .m file and save the result as
+    Utilities/ProjectStartupApp.m
 
 %}
 
-    properties (Access = private)
+    methods (Access = private, Static)
 
-        % Links to be completed before to release:
-        SwayLink = "https://sway.office.com/Q9rUZEGrTyr6EVOB?ref=Link&loc=mysways";
-        StudentFormLink = "https://forms.office.com/Pages/ResponsePage.aspx?id=ETrdmUhDaESb3eUHKx3B5mlcO9AKxC5AgMAKBg6OKuBUOEo4WENGRVE1TVRXSzRTNDlXMDJSNjFHTC4u";
-        FacultyFormLink = "https://forms.office.com/Pages/ResponsePage.aspx?id=ETrdmUhDaESb3eUHKx3B5uTTy0Nzo3hCsqA_uQZCxy5URUNVRFZDNlBPMEZNNUtCWk4zRFc3WE1KMy4u";
-          
-    end
-    
-    methods (Access = private)
-        
         function pingSway(app)
             try
                 if ~ispref("MCCTEAM")
-                    webread(app.SwayLink);
+                    load Utilities\SurveyLinks.mat SwayLink
+                    webread(SwayLink);
                 end
             catch
             end
@@ -66,20 +68,19 @@ classdef StartUpFcn < matlab.apps.AppBase
         
         function openStudentForm(app)
             try
-                web(app.StudentFormLink);
+                load Utilities\SurveyLinks.mat StudentFormLink
+                web(StudentFormLink);
             catch
             end
         end
 
         function openFacultyForm(app)
             try
-                web(app.FacultyFormLink);
+                load Utilities\SurveyLinks.mat FacultyFormLink
+                web(FacultyFormLink);
             catch
             end
         end
-    end
-
-    methods (Access = private, Static)
 
         function saveSettings(isReviewed,numLoad)
             try
@@ -102,7 +103,7 @@ classdef StartUpFcn < matlab.apps.AppBase
 
             % Switch tab to review if has not been reviewed yet
             if isfile(fullfile("Utilities","ProjectSettings.mat"))
-                load(fullfile("Utilities","ProjectSettings.mat"),"numLoad","isReviewed");
+                load(fullfile("Utilities","ProjectSettings.mat"),"isReviewed","numLoad");
                 numLoad = numLoad + 1; % Increment counter
             else
                 isReviewed = false;
@@ -118,14 +119,39 @@ classdef StartUpFcn < matlab.apps.AppBase
             % Save new settings
             app.saveSettings(isReviewed,numLoad)
 
+            % Download links to survey (should only work when module goes
+            % public on GitHub)
+            try
+                import matlab.net.*
+                import matlab.net.http.*
+                
+                Request = RequestMessage;
+                Request.Method = 'GET';
+                Address = URI("http://api.github.com/repos/"+app.GitHubOrganization+...
+                    "/"+app.GitHubRepository+"/contents/Utilities/SurveyLinks.mat");
+                Request.Header    = HeaderField("X-GitHub-Api-Version","2022-11-28");
+                Request.Header(2) = HeaderField("Accept","application/vnd.github+json");
+                [Answer,~,~] = send(Request,Address);
+                websave(fullfile("Utilities/SurveyLinks.mat"),Answer.Body.Data.download_url)
+            catch
+            end
+
         end
 
         % Close request function: UIFigure
         function UIFigureCloseRequest(app, event)
             if event.Source == app.READMEButton
                 open README.mlx
-            else
+            elseif event.Source == app.MainMenuButton
                 open MainMenu.mlx
+            elseif event.Source == app.FacultyButton
+                open MainMenu.mlx            
+            elseif event.Source == app.StudentButton
+                open MainMenu.mlx
+            elseif event.Source == app.OtherButton
+                open MainMenu.mlx
+            else
+                disp("Thank you for your time.")
             end
             delete(app)
         end
@@ -157,7 +183,7 @@ classdef StartUpFcn < matlab.apps.AppBase
         end
 
         % Button pushed function: ReviewUsButton
-        function ReviewUsButtonPushed(app)
+        function ReviewUsButtonPushed(app, event)
             app.TabGroup.SelectedTab = app.TabReview;
         end
 
@@ -198,7 +224,7 @@ classdef StartUpFcn < matlab.apps.AppBase
             app.WelcomeTitle.WordWrap = 'on';
             app.WelcomeTitle.FontSize = 24;
             app.WelcomeTitle.FontWeight = 'bold';
-            app.WelcomeTitle.Position = [2 360 274 59];
+            app.WelcomeTitle.Position = [2 349 274 70];
             app.WelcomeTitle.Text = 'Welcome to Thermodynamics';
 
             % Create MainMenuButton
@@ -250,7 +276,7 @@ classdef StartUpFcn < matlab.apps.AppBase
             app.ReviewTitle.FontSize = 24;
             app.ReviewTitle.FontWeight = 'bold';
             app.ReviewTitle.Position = [2 326 274 93];
-            app.ReviewTitle.Text = 'Welcome to Thermodyanmics';
+            app.ReviewTitle.Text = 'Welcome to Thermodynamics';
 
             % Create Q1
             app.Q1 = uilabel(app.TabReview);
@@ -292,7 +318,7 @@ classdef StartUpFcn < matlab.apps.AppBase
     methods (Access = public)
 
         % Construct app
-        function app = StartUpFcn
+        function app = ProjectStartupApp
 
             % Create UIFigure and components
             createComponents(app)
