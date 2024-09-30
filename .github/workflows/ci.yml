@@ -32,14 +32,13 @@ jobs:
         uses: matlab-actions/setup-matlab@v2
         with:
           release: ${{ matrix.MATLABVersion }}
-          products: # Simulink Statistics_and_Machine_Learning_Toolbox
-          # List required products above in the format shown (and uncomment them)
-          # List of product strings:
-          # Simulink
-          # Statistics_and_Machine_Learning_Toolbox
-          # Simulink_Coder
-          # Econometrics_Toolbox
-          # Deep_Learning_Toolbox
+          products: >
+          Simulink
+          Simscape_Fluids
+          Stateflow
+          Simulink_Real-Time
+          Symbolic_Math_Toolbox
+          Image_Processing_Toolbox
 
 
       # Run all the tests
