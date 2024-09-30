@@ -33,12 +33,12 @@ jobs:
         with:
           release: ${{ matrix.MATLABVersion }}
           products: >
-          Simulink
-          Simscape_Fluids
-          Stateflow
-          Simulink_Real-Time
-          Symbolic_Math_Toolbox
-          Image_Processing_Toolbox
+            Simulink
+            Simscape_Fluids
+            Stateflow
+            Simulink_Real-Time
+            Symbolic_Math_Toolbox
+            Image_Processing_Toolbox
 
 
       # Run all the tests
