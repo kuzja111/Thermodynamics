@@ -138,7 +138,7 @@ Using Simulink and the capabilities of the Simscape Two-Phase Fluid libraries, b
 ## ##
 
 ## Products ##
-MATLAB&reg;, Simscape&trade;, Simulink&reg;, Simulink&reg; Real-Time&trade;, Stateflow&reg;, Symbolic Math Toolbox&trade;, Image Processing Toolbox&trade;
+MATLAB&reg;, Simscape Fluids&trade;, Simulink&reg;, Simulink&reg; Real-Time&trade;, Stateflow&reg;, Symbolic Math Toolbox&trade;, Image Processing Toolbox&trade;
 
 ## License ##
 The license for this module is available in the [license.md](LICENSE.md) file in this GitHub repository.
