@@ -14,7 +14,7 @@
 *.mex*
 *.p
 
-# Derived files
+# Compressed files
 *.zip
 
 # Packaged app and toolbox files
@@ -27,8 +27,13 @@
 # Generated helpsearch folders
 helpsearch*/
 
-# Simulink cache folder
+# Defined Simulink cache folder
 Utilities/SimulinkCache/*
+
+# Standard code generation folders
+slprj/
+sccprj/
+codegen/
 
 # Code generation file
 *.eep
@@ -41,3 +46,9 @@ Utilities/SimulinkCache/*
 
 # Project settings
 Utilities/ProjectSettings.mat
+
+# Test results
+SoftwareTests/TestResults_*
+
+# GitLab page folder
+public/
