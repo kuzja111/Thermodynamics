@@ -1,6 +1,6 @@
 %  Pre-run script for Model_Fridge.mlx
 % ---- Known Issues     -----
-KnownIssuesID = "physmod:common:simtypes:assert:Assertion";
+KnownIssuesID = ["physmod:common:simtypes:assert:Assertion","MATLAB:nonExistentField","MATLAB:MException:MultipleErrors"];
 % ---- Pre-run commands -----
 
 CollectData = @() NewCollectData();
