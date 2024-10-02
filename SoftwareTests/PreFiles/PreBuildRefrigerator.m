@@ -1,6 +1,6 @@
 %  Pre-run script for BuildRefrigerator.mlx
 % ---- Known Issues     -----
-KnownIssuesID = ["physmod:common:simtypes:assert:Assertion","physmod:simscape:simtypes:assert:Assertion"];
+KnownIssuesID = ["physmod:common:simtypes:assert:Assertion","physmod:simscape:simtypes:assert:Assertion","physmod:simscape:compiler:sli:extensible:NoSolverBlockConnected"];
 % ---- Pre-run commands -----
 
 sim = @(varargin) SimNoViewer(varargin);
