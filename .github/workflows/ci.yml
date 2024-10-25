@@ -10,7 +10,7 @@ on:
 
 # Add permission to write GitHub pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -47,7 +47,6 @@ jobs:
             Symbolic_Math_Toolbox
             Image_Processing_Toolbox
 
-
       # Run all the tests
       - name: Run SmokeTests
         uses: matlab-actions/run-command@v2
@@ -56,6 +55,7 @@ jobs:
 
       # Upload the test results as artifact
       - name: Upload TestResults
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: TestResults_${{ matrix.MATLABVersion }}

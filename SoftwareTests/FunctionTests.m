@@ -40,6 +40,16 @@ classdef FunctionTests < matlab.unittest.TestCase
             verifyTrue(testCase,all(actual==expected))
         end
 
-    end % methods
+        function CheckSREValue(testCase)
+            addpath(fullfile(currentProject().RootFolder,"InstructorResources","Solutions","Models"))
+            mdl ="ModelFridgeEvapCompCondSoln";
+            open_system(mdl)
+            val = get_param(mdl,'SimscapeLogOpenViewer');
+            bdclose all
+            rmpath(fullfile(currentProject().RootFolder,"InstructorResources","Solutions","Models"))
+            verifyTrue(testCase,val=="on")    
+        end
+
+        end % methods
 
 end % classdef
