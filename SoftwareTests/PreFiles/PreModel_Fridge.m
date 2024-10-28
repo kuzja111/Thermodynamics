@@ -2,7 +2,14 @@
 % ---- Known Issues     -----
 KnownIssuesID = ["physmod:common:simtypes:assert:Assertion","MATLAB:nonExistentField","MATLAB:MException:MultipleErrors"];
 % ---- Pre-run commands -----
+evalin('base','evaporatorParams')
+evalin('base','condenserParams')
+evalin('base','compressorParams')
+evalin('base','valveParams')
+assignin('base','p0','1018.4')
 
+open_system('ModelFridgeEvapCompCond')
+set_param('ModelFridgeEvapCompCond','SimscapeLogOpenViewer', 'off')
 CollectData = @() NewCollectData();
 sscexplore = @() DontOpenExplorer();
 
